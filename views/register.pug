@@ -2,12 +2,8 @@ extend layout
 
 block content
   .form-container
-    form(class="form-signin" method="POST" action="/auth/register")
+    form(class="form-signin" method="POST" action="/auth/register" )
       h2 Please Register
-
-      .form-group
-        label( for="name" class="sr-only") Name (Optional)
-        input(type="text" name="name" id="name" class="form-control" placeholder="Name")
 
       .form-group
         label( for="username" class="sr-only") Username
@@ -16,6 +12,22 @@ block content
       .form-group
         label(for="password" class="sr-only") Password
         input(type="password" name="password" id="password" class="form-control" placeholder="Password" required)
+
+      .form-group
+        label( for="name" class="sr-only") Name (Optional)
+        input(type="text" name="name" id="name" class="form-control" placeholder="Name" )
+      
+      .form-group
+        label( for="phone" class="sr-only") Phone Number
+        input(type="text" name="phone" id="phone" class="form-control" placeholder="Phone" required)
+     
+      .form-group
+        label(for="email" class="sr-only") Email
+        input(type="text" name="email" id="email" class="form-control" placeholder="Email" required)
+
+      .form-group
+        label(for="citizenID" class="sr-only") Citizen ID
+        input(type="text" name="citizenID" id="citizenID" class="form-control" placeholder="CitizenID" required)
 
       button(class="btn btn-primary btn-block" type="submit") Register
 
