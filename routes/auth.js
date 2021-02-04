@@ -4,10 +4,10 @@ const router = express.Router();
 const User = require('../model/user');
 
 router.post('/register', async (req, res) => {
-  const { username, password, name } = req.body
+  const { username, password, name, phone, email, citizenID } = req.body
   
   // simple validation
-  if (!name || !username || !password) {
+  if (!name || !username || !password || !phone || !email || !citizenID) {
     return res.render('register', { message: 'Please try again' })
   }
   
@@ -15,7 +15,10 @@ router.post('/register', async (req, res) => {
   const user = new User({
     name,
     username,
-    password: passwordHash
+    password: passwordHash,
+    phone,
+    email,
+    citizenID
   })
 
   await user.save()

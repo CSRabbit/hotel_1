@@ -30,5 +30,8 @@ block content
         input(type="text" name="citizenID" id="citizenID" class="form-control" placeholder="CitizenID" required)
 
       button(class="btn btn-primary btn-block" type="submit") Register
+      
+      if message
+        p.alert.alert-danger #{message}
 
       a(href="/login", class="btn btn-link") Have an account?
