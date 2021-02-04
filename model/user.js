@@ -20,7 +20,7 @@ const userSchema = new Schema({
   citizenID: {
     type: String,
     unique: true
-  },
+  }
 })
 
 const UserModel = mongoose.model('User', userSchema)
