@@ -2,4 +2,7 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to Hotel reservation #{title}
+  if user
+    p #{user.username} //pull username from login page but pull data(username) from database
+    p #{user.name} //pull data(username) from database but use user to serch data in databse
