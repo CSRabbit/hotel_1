@@ -23,21 +23,25 @@ router.post('/register', async (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
-    
-  const { username, password } = req.body
+    const { username, password } = req.body
+    // simple validation
+    if (!username || !password) {
+      return res.render('register', { message: 'Please try again' })
+    }
+    const user = await User.findOne({
+      username
+    })
   
-  const user = await User.findOne({
-    username,
-    password
-  })
-  
-  if (user) {
-    
+  if (user) { 
     const isCorrect = bcrypt.compareSync(password, user.password)
-
-    return res.render('index', { user })
+    
+    if (isCorrect) {
+      return res.render('index', { user })
+    } else {
+      return res.render('login', { message: 'Username or Password incorrect' })
+    }
   } else {
-    return res.render('login', { message: 'Email or Password incorrect' })
+    return res.render('login', { message: 'Username does not exist.' })
   }
 
 })
