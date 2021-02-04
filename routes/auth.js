@@ -32,6 +32,9 @@ router.post('/login', async (req, res) => {
   })
   
   if (user) {
+    
+    const isCorrect = bcrypt.compareSync(password, user.password)
+
     return res.render('index', { user })
   } else {
     return res.render('login', { message: 'Email or Password incorrect' })
