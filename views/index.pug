@@ -4,10 +4,18 @@ block content
   h1= title
   p Welcome to Hotel reservation #{title}
   if user
-    p #{user.username} 
+    
+    //p #{user.username} 
     //pull username from login page but pull data(username) from database
-    p #{user.name} 
+    //p #{user.name} 
     //pull data(username) from database but use user to serch data in databse
-    a(href="/booking", class="btn btn-link") booking hotel
-
+    a(href="/booking", class="btn btn-link") booking hotel 
+    
     a(href="/user_info", class="btn btn-link") user information
+
+    a(href="/logout", class="btn btn-link") Logout
+
+  else 
+    .row
+      .col-12
+        a(href="/login", class="btn btn-link") Please Login

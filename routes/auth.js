@@ -35,7 +35,7 @@ router.post('/login', passport.authenticate('local',{
     res.redirect('/');
 })
 
-router.post('/auth/user_info', async (req, res) => {
+router.post('/user_info', async (req, res) => {
     const { username, password, name, phone, email, citizenID } = req.body;
     
     // simple validation
