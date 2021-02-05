@@ -6,7 +6,8 @@ const userSchema = new Schema({
   
   username: {
     type: String,
-    unique: true
+    unique: true,
+    uniqueCaseInsensitive: true
   },
   
   password: String,
@@ -21,7 +22,8 @@ const userSchema = new Schema({
   email: {
     type: String,
     index: true,
-    unique: true
+    unique: true,
+    uniqueCaseInsensitive: true
   },
   
   citizenID: {

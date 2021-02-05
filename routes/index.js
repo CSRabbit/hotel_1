@@ -13,6 +13,10 @@ router.get('/', isLoggedIn, function(req, res, next) {
   res.render('index', { title: 'Express' , user: req.session.user });
 });
 
+router.get('/auth/userinfo', isLoggedIn, function(req, res, next) {
+  res.render('user_info', { user: req.session.user });
+});
+
 router.get('/login', (req, res) => {
   res.render('login')
 }); 
